@@ -4,12 +4,12 @@
 
 ## Team information
 - **Partner 1:** Amaya Rogers
-- **Partner 2:** [Add partner's full name]
-- **Canvas team number:** [Add team number]
+- **Partner 2:** Brylle Tejada
+- **Canvas team number:** Team 11
 
 ## Project information
-- **Dataset:** [Add selected dataset name and source]
-- **Google Cloud project ID:** [Add exact project ID from BigQuery]
+- **Dataset:** `bigquery-public-data.thelook_ecommerce`
+- **Google Cloud project ID:** `thelook-ecommerce-511800`
 
 ## Google Cloud IAM verification
 Upload a screenshot showing the partner and instructor in IAM to this repository (for example, `visuals/iam-access.png`).
