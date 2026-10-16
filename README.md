@@ -13,7 +13,7 @@
 - **Google Cloud project ID:** `thelook-ecommerce-511800`
 
 ## Google Cloud IAM verification
-Upload a screenshot showing the partner and instructor in IAM to this repository (for example, `visuals/iam-access.png`).
+`visuals/google-IAM.png`
 
 ## Repository organization
 - `charter.md` — Gap write-up (CP1)
