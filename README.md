@@ -5,6 +5,7 @@
 ## Team information
 - **Partner 1:** Amaya Rogers
 - **Partner 2:** Brylle Tejada
+- **Partner 3:** Rachel Garside
 - **Canvas team number:** Team 11
 
 ## Project information
