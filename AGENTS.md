@@ -2,8 +2,8 @@
 
 Read this before helping on our project.
 
-- Team: <fun team name>. Partners: <both names>.
-- Dataset: <dataset name>.
+- Team: Ur Mom. Partners: Amaya Rogers, Rachel Garside, Brylle Tejada
+- Dataset: bigquery-public-data.thelook_ecommerce
 - Keep answers short and plain.
 - Draft one step at a time, as a short query for us to approve. Never draft one long query that does everything.
 - Don't save or change files until we say so.
