@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Return rate by men's product group</title>
+  <desc id="desc">Men Accessories: 31.61 percent, 564 of 1,784 items. Other Men categories: 28.30 percent, 7,285 of 25,739. Difference: 3.31 percentage points. Both use a 60-day delivery maturity cutoff.</desc>
+  <rect width="1400" height="900" fill="#ffffff"/>
+  <text x="100" y="88" font-family="Arial, sans-serif" font-size="42" font-weight="600" fill="#172b4d">Men Accessories return rate is 3.31 points higher</text>
+  <text x="100" y="138" font-family="Arial, sans-serif" font-size="24" fill="#475569">Returned items among delivered items at least 60 days old</text>
+  <g font-family="Arial, sans-serif" font-size="20" fill="#475569">
+    <text x="100" y="710" text-anchor="end">0%</text><text x="100" y="605" text-anchor="end">10%</text>
+    <text x="100" y="500" text-anchor="end">20%</text><text x="100" y="395" text-anchor="end">30%</text>
+    <text x="100" y="290" text-anchor="end">40%</text>
+  </g>
+  <g stroke="#d7dee8" stroke-width="2">
+    <line x1="125" y1="700" x2="1290" y2="700"/><line x1="125" y1="595" x2="1290" y2="595"/>
+    <line x1="125" y1="490" x2="1290" y2="490"/><line x1="125" y1="385" x2="1290" y2="385"/>
+    <line x1="125" y1="280" x2="1290" y2="280"/>
+  </g>
+  <line x1="125" y1="280" x2="125" y2="700" stroke="#64748b" stroke-width="2"/>
+  <text x="38" y="495" transform="rotate(-90 38 495)" font-family="Arial, sans-serif" font-size="20" fill="#334155">Return rate</text>
+  <rect x="315" y="368.1" width="300" height="331.9" rx="5" fill="#2563a6"/>
+  <rect x="800" y="402.8" width="300" height="297.2" rx="5" fill="#d97706"/>
+  <text x="465" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#172b4d">31.61%</text>
+  <text x="950" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#172b4d">28.30%</text>
+  <g stroke="#334155" stroke-width="2" fill="none">
+    <line x1="680" y1="368.1" x2="680" y2="402.8"/><line x1="666" y1="368.1" x2="694" y2="367"/>
+    <line x1="666" y1="402.8" x2="694" y2="402.8"/>
+  </g>
+  <rect x="634" y="374" width="92" height="26" rx="4" fill="#ffffff"/>
+  <text x="680" y="394" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="600" fill="#334155">+3.31 pp</text>
+  <g font-family="Arial, sans-serif" font-size="23" fill="#172b4d">
+    <text x="465" y="750" text-anchor="middle" font-weight="600">Men Accessories</text>
+    <text x="950" y="750" text-anchor="middle" font-weight="600">Other Men categories</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="20" fill="#475569">
+    <text x="465" y="788" text-anchor="middle">564 of 1,784 returned</text>
+    <text x="950" y="788" text-anchor="middle">7,285 of 25,739 returned</text>
+  </g>
+  <line x1="100" y1="834" x2="1300" y2="834" stroke="#d7dee8" stroke-width="2"/>
+  <text x="100" y="870" font-family="Arial, sans-serif" font-size="18" fill="#475569">Source: team-run BigQuery results, theLook Ecommerce. 60-day maturity cutoff; counts are observational.</text>
+</svg>
