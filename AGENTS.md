@@ -13,7 +13,7 @@ Read this before helping on our project.
 - Analysis fields from the team's schema export: `order_items.id`, `product_id`, `delivered_at`, `returned_at`, `sale_price`; `products.id`, `category`, `department`.
 - Join: `order_items.product_id = products.id`. The team-run quality result found no duplicate item IDs or unmatched products in the mature delivered cohort.
 - Preparation: non-null delivery at least 60 days before query date; returned when `returned_at` is non-null. The 60-day rule is a project choice, not a confirmed store policy.
-- CP2 instructor direction: consider logistic regression with returned/not-returned Y and price, brand, and age as candidate Xs. Define and verify age before use. CP2 instructions are not published; this plan is preliminary.
+- CP2 instructions are now published. Use binary returned/not-returned Y and the logistic-regression requirements summarized in model/plan.md. Brylle confirmed users.age, users.id, and order_items.user_id in the schema export. The team created the `busm410_cp2` dataset in US. CP2 analysis table `cp2_analysis_table` was created by Query 12 on 2026-11-19.
 - Do not describe `sale_price` units as currency, profit, or recoverable value unless verified from source documentation.
 
 ## Working instructions
