@@ -7,11 +7,15 @@
 
 ## CP1 problem framing
 
-We ask whether mature delivered items in **Men Accessories** are returned more often than items in the other Men categories. Team-run BigQuery results show 564 returns among 1,784 mature Men Accessories items (31.61%), compared with 7,285 among 25,739 items in other Men categories (28.30%), a **3.31 percentage-point gap**.
+We ask whether mature delivered items in **Men Accessories** are returned more often than items in the other Men categories. Team-run BigQuery results show 564 returns among 1,784 mature Men Accessories items (31.61%), compared with 7,285 among 25,739 items in other Men categories (28.30%), a **3.31 percentage-point gap**. The executed query selected category Accessories within the Men department and labeled that group “Men Accessories.”
 
-At the peer rate, the focus group would have about 505 returns, or about 59 fewer than observed. Using the focus group's average returned-item sale price gives an estimated 2,539.20 **sale_price units** associated with the excess. This is gross sale-price value, not confirmed currency, profit, or recoverable money. The 60-day maturity cutoff is our analysis choice, not a verified return policy.
+At the peer rate, the focus group would have about 505 returns, or about 59 fewer than observed. Using the focus group's average returned-item sale price gives an estimated 2,539.20 **sale_price units** associated with the excess. This is gross sale-price value, not confirmed currency, profit, or recoverable money. The 60-day maturity cutoff is our analysis choice, not a verified return policy. The instructor noted that the estimate is small (about 2.5k) but accepted the gap as a starting point for CP2.
 
 **Row grain:** one `order_items` row joined to its product in `products`.
+
+## CP2 direction (preliminary)
+
+Instructor feedback points toward logistic regression with returned/not returned as Y and price, brand, and age as candidate Xs. The next checkpoint instructions are not published; see [model/plan.md](model/plan.md). This is a plan only.
 
 ## Repository guide
 
@@ -20,7 +24,7 @@ At the peer rate, the focus group would have about 505 returns, or about 59 fewe
 | [charter.md](charter.md) | CP1 question, decision, and scope |
 | [findings.md](findings.md) | Gap, benchmark, value, limitations, and chart |
 | [sql/README.md](sql/README.md) | Query method and preparation |
-| [sql/](sql/) | Numbered CP1 queries |
+| [sql/](sql/) | Numbered SQL archive with query IDs and run times |
 | [Other/dataset_documentation.md](Other/dataset_documentation.md) | Dataset source and fields |
 | [Other/table_diagram.md](Other/table_diagram.md) | Analysis-table relationship |
 | [Other/audit_protocol.md](Other/audit_protocol.md) | How we review AI-assisted work |
@@ -29,4 +33,4 @@ At the peer rate, the focus group would have about 505 returns, or about 59 fewe
 | [visuals/gap_chart.svg](visuals/gap_chart.svg) | CP1 comparison chart |
 | [visuals/google-IAM.png](visuals/google-IAM.png) | BigQuery setup evidence |
 
-The reported counts and calculations are in [findings.md](findings.md); the current query drafts are in [sql/](sql/).
+The reported counts and calculations are in [findings.md](findings.md). SQL statements recovered from BigQuery history, with job IDs and run times, are archived in [sql/](sql/).

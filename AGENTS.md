@@ -8,15 +8,18 @@ Read this before helping on our project.
 - Team's Google Cloud project ID: `thelook-ecommerce-511800`.
 - Confirmed tables: `distribution_centers`, `events`, `inventory_items`, `order_items`, `orders`, `products`, `users`.
 - CP1 focus: Men Accessories return rate vs all other Men categories among delivered items at least 60 days old.
+- The executed benchmark uses `products.category = 'Accessories'` within `products.department = 'Men'`; the query labels that group “Men Accessories.”
 - Reported rates: Men Accessories 564/1,784 (31.61%); other Men categories 7,285/25,739 (28.30%); gap 3.31 percentage points. These are based on team-run BigQuery results; the gap/value math is the agent's calculation.
 - Analysis fields from the team's schema export: `order_items.id`, `product_id`, `delivered_at`, `returned_at`, `sale_price`; `products.id`, `category`, `department`.
 - Join: `order_items.product_id = products.id`. The team-run quality result found no duplicate item IDs or unmatched products in the mature delivered cohort.
 - Preparation: non-null delivery at least 60 days before query date; returned when `returned_at` is non-null. The 60-day rule is a project choice, not a confirmed store policy.
+- CP2 instructor direction: consider logistic regression with returned/not-returned Y and price, brand, and age as candidate Xs. Define and verify age before use. CP2 instructions are not published; this plan is preliminary.
 - Do not describe `sale_price` units as currency, profit, or recoverable value unless verified from source documentation.
 
 ## Working instructions
 - Keep answers short and plain.
-- Draft one step at a time, as a short query for us to approve. Never draft one long query that does everything.
+- Draft one short query at a time, with its question, fields, assumptions, and estimated bytes when available.
+- Save the exact SQL the team ran with BigQuery job ID and run date/time. Never label a draft as executed.
 - Do not save or change files until we say so.
 - Back every claim about our data with a source, and say when something is your own conclusion or calculation.
 - Ask us to confirm a table or column exists before using it if it is not in the schema export.

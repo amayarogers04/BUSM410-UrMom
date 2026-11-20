@@ -1,0 +1,3 @@
+-- BigQuery job ID: job_8OBhm2TM2Ulu3IhMbyWCvhIuI6-d
+-- Run time: 2026-11-10 21:32:28 HST
+WITH session_steps AS ( SELECT session_id, MIN(IF(event_type = 'product', sequence_number, NULL)) AS product_step, MIN(IF(event_type = 'purchase', sequence_number, NULL)) AS purchase_step FROM `bigquery-public-data.thelook_ecommerce.events` WHERE event_type IN ('product', 'purchase') AND session_id IS NOT NULL GROUP BY session_id ) SELECT COUNTIF(product_step IS NOT NULL) AS product_sessions, COUNTIF(product_step IS NOT NULL AND purchase_step > product_step) AS product_then_purchase_sessions, ROUND(100 * SAFE_DIVIDE( COUNTIF(product_step IS NOT NULL AND purchase_step > product_step), COUNTIF(product_step IS NOT NULL) ), 2) AS product_to_purchase_pct FROM session_steps;

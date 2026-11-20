@@ -2,6 +2,8 @@
 
 ## Measured gap
 
+The executed benchmark uses category `Accessories` within department `Men`; “Men Accessories” is its output label.
+
 Team-provided BigQuery results show a higher return rate for mature delivered Men Accessories items than for all other Men categories.
 
 | Group | Returned | Mature delivered items | Rate |
@@ -16,7 +18,7 @@ The peer rate is pooled: total returns divided by total items in all other Men c
 
 One row is an `order_items.id`, joined to `products.id` through `order_items.product_id`. We include delivered items only if `delivered_at` is at least 60 days before the query date; a non-null `returned_at` marks a return. The 60-day rule is our analysis choice, not a verified store policy.
 
-The team's quality result covered 54,922 mature delivered joined rows: 54,922 distinct item IDs, no missing or unmatched product IDs, no missing or negative sale prices, no return-before-delivery dates, and no future return dates. Delivery dates ranged from 2019-01-11 to 2026-09-12 in that cohort. See [query 02](sql/02_return_data_quality.sql) and [audit log](Other/audit_log.md).
+The team's quality result covered 54,922 mature delivered joined rows: 54,922 distinct item IDs, no missing or unmatched product IDs, no missing or negative sale prices, no return-before-delivery dates, and no future return dates. Delivery dates ranged from 2019-01-11 to 2026-09-12 in that cohort. See [quality query](sql/10_mature_cohort_quality_check.sql) and [audit log](Other/audit_log.md).
 
 ## Value estimate
 

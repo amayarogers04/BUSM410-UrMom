@@ -1,0 +1,3 @@
+-- BigQuery job ID: job_JE-i9RVcrey5zdv5O6SSjybZ0ltm
+-- Run time: 2026-11-10 21:50:00 HST
+SELECT p.department, p.category, COUNT(*) AS mature_delivered_items, COUNTIF(oi.returned_at IS NOT NULL) AS returned_items, ROUND(100 * SAFE_DIVIDE( COUNTIF(oi.returned_at IS NOT NULL), COUNT(*) ), 2) AS return_rate_pct, ROUND(SUM(IF(oi.returned_at IS NOT NULL, oi.sale_price, 0)), 2) AS returned_sales_value FROM `bigquery-public-data.thelook_ecommerce.order_items` AS oi JOIN `bigquery-public-data.thelook_ecommerce.products` AS p ON oi.product_id = p.id WHERE oi.delivered_at IS NOT NULL AND DATE(oi.delivered_at) <= DATE_SUB(CURRENT_DATE(), INTERVAL 60 DAY) GROUP BY p.department, p.category HAVING COUNT(*) >= 100 ORDER BY return_rate_pct DESC;

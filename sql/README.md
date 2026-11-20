@@ -1,20 +1,27 @@
-# SQL Query Notes
+# SQL Query Archive
 
-These are three numbered query drafts for the CP1 return analysis. The counts in findings came from queries the team ran; their exact original SQL text was not saved here. Review these drafts and check estimated bytes before rerunning. They read only required fields and avoid `SELECT *`.
+Statements below were recovered from BigQuery job history on 2026-11-17. Each SQL file records the BigQuery job ID and run time (Hawaii time). They were not rerun during recovery.
 
-1. [01_category_return_rates.sql](01_category_return_rates.sql): category screen for mature delivered items.
-2. [02_return_data_quality.sql](02_return_data_quality.sql): identity, join, price, and date checks.
-3. [03_men_accessories_peer_benchmark.sql](03_men_accessories_peer_benchmark.sql): final comparison with all other Men categories.
+1. [01_schema_table_counts.sql](01_schema_table_counts.sql): table names, fields, and row counts.
+2. [02_orders_by_month_status.sql](02_orders_by_month_status.sql): order status by month.
+3. [03_repeat_customers_by_year.sql](03_repeat_customers_by_year.sql): same-year repeat customers.
+4. [04_event_type_profile.sql](04_event_type_profile.sql): events and sessions by event type.
+5. [05_product_to_purchase_overall.sql](05_product_to_purchase_overall.sql): product-view sessions followed by purchase.
+6. [06_product_to_purchase_by_traffic_source.sql](06_product_to_purchase_by_traffic_source.sql): conversion by traffic source.
+7. [07_product_to_purchase_by_year.sql](07_product_to_purchase_by_year.sql): conversion by year.
+8. [08_product_to_purchase_by_browser.sql](08_product_to_purchase_by_browser.sql): conversion by browser.
+9. [09_category_return_screen.sql](09_category_return_screen.sql): category return screen.
+10. [10_mature_cohort_quality_check.sql](10_mature_cohort_quality_check.sql): cohort and join quality.
+11. [11_men_accessories_benchmark.sql](11_men_accessories_benchmark.sql): final CP1 benchmark.
 
-## Method
+The monthly usage check (job `job_s6kXWySWtI3c34Kbu0rmkpR09DtR`) is omitted because it was an allowance check, not project analysis.
+
+## CP1 method
 - Join `order_items.product_id` to `products.id`.
-- Include non-null deliveries on or before `DATE_SUB(CURRENT_DATE(), INTERVAL 60 DAY)`. The 60-day window is an analysis choice, not a verified return policy.
-- Count an item as returned when `returned_at` is not null.
-- Define peers as all other items where `products.department = 'Men'`; pool counts so the benchmark is item-weighted.
-- The team's quality result found distinct item IDs, matched products, non-missing/non-negative prices, and no invalid return-date ordering in the checked cohort.
-- The cutoff rolls forward when rerun, so results can change.
+- Include non-null deliveries on or before `DATE_SUB(CURRENT_DATE(), INTERVAL 60 DAY)`; this cutoff is an analysis choice.
+- A non-null `returned_at` marks a return.
+- Peer group is all other items in Men; pooled counts make it item-weighted.
+- The cutoff changes over time, so reruns may differ.
 
-## Cost and review
-The queries select a small set of columns and aggregate in BigQuery. Before running, check estimated bytes and remaining free allowance. The agent does not run queries on the team's behalf.
-
-Earlier exploratory results for orders, repeat customers, and event-log comparisons are summarized in [the audit log](../Other/audit_log.md). Their exact SQL text was not preserved here; these files are the current query drafts for the final return analysis.
+## CP2 query workflow
+Draft and review one short query at a time. Before running, record its question, fields, assumptions, and estimated bytes when available. After a team member runs it, preserve the submitted SQL, job ID, and run time. Keep drafts separate from this executed-query archive. The agent does not run queries.

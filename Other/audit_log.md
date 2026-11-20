@@ -4,16 +4,17 @@
 
 | Category | Count |
 |---|---:|
-| Caught an error | 0 |
+| Caught an error | 1 |
 | Verified a claim | 9 |
 | Separated fact from opinion | 0 |
-| Changed the analysis | 0 |
-| Improved the agent's instructions | 0 |
+| Changed the analysis | 1 |
+| Improved the agent's instructions | 1 |
 
 ## Caught an error
 
 | Entry number | Date | What the agent said or did | How the human checked it | Result |
 |---:|---|---|---|---|
+| 10 | 2026-11-17 | Agent had saved reconstructed CP1 SQL drafts instead of the original analysis statements. | Brylle shared instructor feedback that the files did not match the queries run; agent recovered statements from BigQuery history. Team review of replacements is pending. | The archive now records the recovered statements, job IDs, and run times; no query was rerun. |
 
 ## Verified a claim
 
@@ -38,8 +39,10 @@
 
 | Entry number | Date | What the agent said or did | How the human checked it | Result |
 |---:|---|---|---|---|
+| 12 | 2026-11-17 | Agent revised the CP2 direction after CP1 feedback. | Brylle shared instructor feedback: the about-2.5k value is small but acceptable to proceed; logistic regression with returned yes/no as Y and price, brand, age as candidate Xs was recommended. | CP1 remains the starting gap; a preliminary CP2 plan is recorded, with official instructions and the age definition pending. |
 
 ## Improved the agent's instructions
 
 | Entry number | Date | What the agent said or did | How the human checked it | Result |
 |---:|---|---|---|---|
+| 11 | 2026-11-17 | Agent instructions did not require preserving exact executed SQL. | Brylle relayed the instructor correction that the SQL files were drafts and exact queries should be saved. | AGENTS.md and audit_protocol.md now require the submitted SQL, job ID, and run time for team-run queries. |

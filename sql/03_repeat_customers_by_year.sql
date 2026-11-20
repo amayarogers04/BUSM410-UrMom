@@ -1,0 +1,3 @@
+-- BigQuery job ID: job_e3BYfFnxGjHYTpnovhS91bFlfE6a
+-- Run time: 2026-11-10 21:23:28 HST
+WITH customer_year AS ( SELECT EXTRACT(YEAR FROM created_at) AS order_year, user_id, COUNT(*) AS orders FROM `bigquery-public-data.thelook_ecommerce.orders` WHERE EXTRACT(YEAR FROM created_at) BETWEEN 2019 AND 2025 GROUP BY order_year, user_id ) SELECT order_year, COUNT(*) AS customers, COUNTIF(orders > 1) AS repeat_customers, ROUND(100 * SAFE_DIVIDE(COUNTIF(orders > 1), COUNT(*)), 2) AS same_year_repeat_pct FROM customer_year GROUP BY order_year ORDER BY order_year;

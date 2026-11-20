@@ -17,7 +17,7 @@ Fields used for CP1, as listed in the team's schema export:
 Consult the current BigQuery schema before using fields from other tables.
 
 ## Analysis unit and relationship
-One row per `order_items.id), with product attributes from `products`; join on `order_items.product_id = products.id`. The team's quality output for the mature cohort had 54,922 rows and distinct item IDs, with zero missing/unmatched product IDs. See [table diagram](table_diagram.md) and [query 02](../sql/02_return_data_quality.sql).
+One row per `order_items.id`, with product attributes from `products`; join on `order_items.product_id = products.id`. The team's quality output for the mature cohort had 54,922 rows and distinct item IDs, with zero missing/unmatched product IDs. See [table diagram](table_diagram.md) and [query 10](../sql/10_mature_cohort_quality_check.sql).
 
 ## Coverage and limitations
 - CP1 uses only `order_items` and `products` from the seven-table dataset.
@@ -25,3 +25,6 @@ One row per `order_items.id), with product attributes from `products`; join on `
 - A return is a non-null `returned_at`; the 60-day rule is our choice, not a verified policy.
 - Available schema/results do not establish the currency or accounting meaning of `sale_price`; the findings use sale-price units, not confirmed dollars or profit.
 - Quality checks apply to the queried mature cohort, not every row or field in the dataset.
+
+
+CP2 note: price and brand fields are listed in the team schema export. The instructor-mentioned “age” predictor is undefined; confirm its meaning and source before use.

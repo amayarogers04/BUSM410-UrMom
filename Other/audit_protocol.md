@@ -4,10 +4,11 @@
 1. Check new table and column names against the team's BigQuery schema export; ask the team to confirm undocumented fields.
 2. Draft one short query at a time. State its question, fields, assumptions, and estimated bytes when available.
 3. The team reviews the SQL and bytes estimate, then runs it. The agent does not run queries or spend the team's BigQuery allowance.
-4. Link data claims to the query or result the team supplied. Label agent arithmetic and interpretation as calculations or conclusions.
-5. Validate important results with a focused check where practical. Record meaningful human checks in `Other/audit_log.md`; do not describe the agent's own review as a human check.
-6. If the analysis changes, explain the old and new interpretation and preserve the old log entry.
-7. The team reviews final files before pushing. The agent does not commit or push.
+4. When a team member runs a query, save the exact submitted SQL in a numbered file under `sql/` with its BigQuery job ID and run date/time. Keep drafts separate from executed queries.
+5. Link data claims to the query or result the team supplied. Label agent arithmetic and interpretation as calculations or conclusions.
+6. Validate important results with a focused check where practical. Record meaningful human checks in `Other/audit_log.md`; do not describe the agent's own review as a human check.
+7. If the analysis changes, explain the old and new interpretation and preserve the old log entry.
+8. The team reviews final files before pushing. The agent does not commit or push.
 
 ## Checks for this gap
 - Confirm the denominator has only delivered items passing the 60-day maturity rule.
