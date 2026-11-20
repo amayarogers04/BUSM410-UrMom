@@ -24,4 +24,8 @@ Should a manager prioritize a follow-up review of Men Accessories products and t
 
 
 ## CP2 handoff
-Instructor feedback suggests logistic regression with returned/not returned as Y and price, brand, and age as candidate Xs. This is preliminary; official instructions are pending. See [model/plan.md](model/plan.md).
+CP2 used returned/not returned as Y, with price, customer age, the Men Accessories indicator, and grouped brand as Xs. The refreshed cohort showed a -0.38 percentage-point Accessories difference, while the classifier matched the 72.20% majority-class baseline and predicted no returns. No predictor showed a robust adjusted association after accounting for the many brand comparisons. See [findings.md](findings.md), [model/plan.md](model/plan.md), and [model/model_card.md](model/model_card.md).
+
+
+## CP2 reflection
+In the later CP2 cohort, the Accessories rate was 28.12% versus 28.50% for other Men categories, and the logistic model did not beat the majority-class baseline; this suggests the CP1 gap needs more investigation rather than a product decision. The 60-day cohort cutoff changed, so the two gaps are not a like-for-like comparison.
